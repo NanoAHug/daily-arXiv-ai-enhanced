@@ -43,7 +43,18 @@ https://github.com/user-attachments/assets/b25712a4-fb8d-484f-863d-e8da6922f9d7
 
 
 # How to use
-This repo will daily crawl arXiv papers about **cs.CV, cs.GR, cs.CL and cs.AI**, and use **DeepSeek** to summarize the papers in **Chinese**.
+This fork collects daily arXiv papers on **AI, silicon photonics/optoelectronics, and integrated circuits**, and generates AI summaries in **Chinese**.
+The daily workflow reads the repository's `CATEGORIES` Actions variable:
+
+```text
+cs.AI,cs.CL,cs.CV,cs.LG,physics.optics,physics.app-ph,cs.AR,eess.SP
+```
+
+- `cs.AI`, `cs.CL`, `cs.CV`, `cs.LG`: the existing AI coverage.
+- `physics.optics`, `physics.app-ph`: optics, photonics, and electronic/optoelectronic devices, including silicon photonics and photonic integrated circuits.
+- `cs.AR`, `eess.SP`: hardware architecture and signal-processing systems, including chip design and circuit implementations.
+
+These are broad [arXiv categories](https://arxiv.org/category_taxonomy), so related research is included too. New category buttons appear on the website once the daily crawl and summary generation finish; earlier daily archives are unchanged.
 If you wish to crawl other arXiv categories, use other LLMs, or other languages, please follow the instructions.
 Otherwise, you can watch the video above first and directly use this repo in https://dw-dengwei.github.io/daily-arXiv-ai-enhanced/. Please star it if you like :)
 
@@ -58,7 +69,7 @@ Otherwise, you can watch the video above first and directly use this repo in htt
 5. Paper summaries are publicly accessible without a password. This fork does not use an access-password secret.
 6. Go to Variables. Variables are shown as plain text and are used for non-sensitive data
 7. Create the following repository variables:
-   1. `CATEGORIES`: separate the categories with ",", such as "cs.CL, cs.CV"
+   1. `CATEGORIES`: comma-separated arXiv category IDs; use the list above for this fork's AI, photonics, and integrated-circuit coverage.
    2. `LANGUAGE`: such as "Chinese" or "English"
    3. `MODEL_NAME`: such as "deepseek-chat"
    4. `EMAIL`: your email for push to GitHub
